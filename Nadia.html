@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Un mes contigo 💕</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4ec, #fff);
+      color: #333;
+    }
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 20px;
+    }
+    .section {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 60px 0;
+      gap: 20px;
+    }
+    .section:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+
+    /* animaciones */
+    .text, .photo {
+      opacity: 0;
+      transition: all 1s ease;
+    }
+    .text {
+      transform: translateX(-80px);
+    }
+    .photo {
+      transform: translateX(80px);
+    }
+    .visible .text {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .visible .photo {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    .text {
+      flex: 1;
+      padding: 25px;
+      background: rgba(255, 192, 203, 0.4);
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+    }
+    .text h2 {
+      color: #e75480;
+      margin-bottom: 10px;
+    }
+    .text p {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+    .photo {
+      flex: 1;
+    }
+    .photo img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+    }
+    h1 {
+      text-align: center;
+      margin-top: 40px;
+      color: #e75480;
+      font-size: 40px;
+    }
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      background: #ffe4ec;
+      border-radius: 20px 20px 0 0;
+      margin-top: 80px;
+      font-size: 20px;
+    }
+    footer span {
+      color: #e75480;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Un mes contigo 💕</h1>
+  <div class="container">
+    <div class="section">
+      <div class="text">
+        <h2>Nuestro primer mes</h2>
+        <p>Hace un mes empezó algo que me hace mas feliz cada día. Desde que estás conmigo siento que todo es mejor, me haces sentir el niño mas feliz del mundo.</p>
+      </div>
+      <div class="photo">
+        <img src="Imagen de WhatsApp 2025-09-28 a las 14.44.19_80ea1f25.jpg" alt="Nosotros">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>Momentos especiales</h2>
+        <p>En tan poquito tiempo ya hemos vivido cosas que nunca voy a olvidar. Muchas cositas vividas y todas las que nos quedan, todos los momentos a tu lado son lo que mas feliz me hacen, tengo muchsimas ganas de seguir viviendo todas estas cosas tan increibles contigo.</p>
+      </div>
+      <div class="photo">
+        <img src="Imagen de WhatsApp 2025-09-28 a las 14.44.17_e69097b4.jpg" alt="Momentos">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>Risas y complicidad</h2>
+        <p>Me encanta cómo contigo todo se vuelve divertido. Verte feliz, sonriendo me llena tantisimo. Tienes una risa preciosa y que me encanta oir, eres el motivo de mi felicidad, gracias por ser tan increible.</p>
+      </div>
+      <div class="photo">
+        <img src="Imagen de WhatsApp 2025-09-28 a las 14.44.17_c4494239.jpg" alt="Risas juntos">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>Gracias a ti</h2>
+        <p>Gracias por ser como eres, por cuidarme y hacerme sentir tan bien. Nunca me habia sentido tan querido, de esta forma tan preciosa, me encantas mucho y me encanta como nos complementamos amor, voy a cuidarte siempre porque te quiero con todo mi corazon.</p>
+      </div>
+      <div class="photo">
+        <img src="flor.jpg" alt="Gracias a ti">
+      </div>
+    </div>
+
+    <div class="section">
+      <div class="text">
+        <h2>Un futuro contigo</h2>
+        <p>Esto acaba de empezar, y lo que más ilusión me hace es saber que todo lo que viene lo viviremos juntos. Cada pasito juntos será algo especial. Te amo con locura Nadia. No se bien como expresar todo lo que me haces sentir,
+          contigo me siento un niño pequeño amor, contigo siento el amor que nunca he tenido, quiero agradecerte de corazon todo lo que haces por mi,
+          el como me quieres, el como me tratas. Eres unica Nadia y voy a cuidarte como la princesa que eres amor. No me cansare nunca de decirte lo 
+          mucho que te quiero. Eres mi mundo amor.
+        </p>
+      </div>
+      <div class="photo">
+        <img src="IMG-20250928-WA0007.jpg" alt="Nuestro futuro">
+      </div>
+    </div>
+  </div>
+  
+
+  <footer>
+    <p>Por muchos meses más, <span>te amo 💖</span></p>
+  </footer>
+
+  <script>
+    // IntersectionObserver para animaciones
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    sections.forEach(section => {
+      observer.observe(section);
+    });
+  </script>
+</body>
+</html>
